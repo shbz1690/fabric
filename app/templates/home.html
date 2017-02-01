@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Welcome to Django{% endblock %}
+{% block head %}Welcome to Django{% endblock %}
+{% block content %}
+    <p> Welcome {{ user.username }} !!! <a href="/logout/">Logout</a><br /><br /> </p>   
+
+    <form method="post" action=".">{% csrf_token %}
+        <table border="0">
+            {{ form.as_table }}
+        </table>
+    <input type="submit" value="Submit"  style="position:absolute"/>    
+    </form>
+
+{% endblock %}
